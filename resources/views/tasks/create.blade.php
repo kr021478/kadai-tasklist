@@ -1,19 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-
+    
         <h1>新規タスク作製ページ</h1>
-       {!! Form::model($tasks, ['route' => 'tasks.store']) !!}
-        
-        {!! Form::label('status', 'ステータス:') !!}
-        {!! Form::text('status') !!}
-        {!! Form::label('content', 'タスク:') !!}
-        {!! Form::text('content') !!}
-
-        {!! Form::submit('作製') !!}
-
-    {!! Form::close() !!}
-   
-
+        <div class="row">
+           <div class="col-xs-6">
+           {!! Form::model($tasks, ['route' => 'tasks.store']) !!}
+                   <div class="form-group">
+                    {!! Form::label('status', 'ステータス:') !!}
+                    {!! Form::text('status',null,['class'=>'form-control','placeholder'=>'例：休み']) !!}
+                    </div>
+                    
+                    <div class="form-group">
+                    {!! Form::label('content', 'タスク:') !!}
+                    {!! Form::text('content',null,['class'=>'form-control','placeholder'=>'例：整理']) !!}
+                    </div>
+                    {!! Form::submit('作製',['class'=>'btn btn-primary']) !!}
+                {!! Form::close() !!}
+           </div>
+       </div>
 
 @endsection

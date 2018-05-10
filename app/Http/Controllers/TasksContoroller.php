@@ -20,6 +20,7 @@ class TasksContoroller extends Controller
     public function create(){
         $task=new Task;
         return view('tasks.create',['tasks'=>$task,]);
+        //return view('modal.create_modals',['tasks'=>$task,]);
     }
     public function edit($id){
         $task= Task::find($id);
